@@ -1,0 +1,171 @@
+@charset 'UTF-8';
+
+@media screen and (min-width: 601px){
+
+    /* 基本設定 */
+
+    body{
+        line-height: 1.5;
+        color: #f4f2eb;
+        font-size: 0.85em;
+    }
+    
+    main p{
+        font-size: 1.1em;
+    }
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+      }    
+    img {
+        border: none;  /*画像に付く余白を消す*/
+        display: block;  /*vertical-align: bottom;でも同じ効果 */
+        width: 100vw; /* 画面幅の100%に合わせる */
+        height: auto; /* アスペクト比を維持して高さを自動調整 */
+        object-fit: contain; /* アスペクト比を保ちながら画像全体を表示 */
+        max-width: 100%; /* 画像の元の幅を超えないようにする */
+      }    
+    a{
+        transition: .2s;
+        text-decoration: none;
+    }
+    .hidden-pc{
+        display: none;
+      }      
+    
+/* ヘッダー全体の設定 */
+    header {
+        position: relative; /* 相対配置 */
+        width: 100%;
+        height: auto;
+    }
+    .navbar-collapse {
+        position: absolute; /* 絶対配置 */
+        bottom: 0px; /* ヘッダーの下に配置 */
+        display: flex;
+        justify-content: center;  /*等間隔に余白を付ける(両端に余白が付く)*/
+        width: 100vw;
+        margin: 0 auto;
+        /* background-color: rgba(255, 255, 255, 0.2); /*初期状態では背景なし（透過）*/
+        /* transition: background-color 0.3s ease; 背景色の変化にアニメーションをつける */ 
+    }
+    .navbar-collapse ul {
+        display: flex;  /* 🔹 横並びにする */
+        padding: 0;
+    }
+    .navbar-collapse li {
+        margin: 0 18px;  /* 🔹 各メニューの間隔を調整 */
+        list-style-type: none;  /*リストの・を消す*/
+    }
+    
+    nav ul li a {
+        display: block;
+        width: 8vw; /* 必要に応じて変更可能 */
+        height: 9.4vmax; /* 要素の高さを固定 */
+        font-size: 1.2dvw;
+        color: #736d71;
+        cursor: pointer; /* カーソルをポインターに変更 */
+        transition: transform 0.3s ease; /* ホバー時のアニメーション */
+    }
+    
+    nav ul li.hover1 a {
+        background-image: url(../images/common/navi_1.png);
+        background-size: 75%; /* 背景画像を項目全体にフィット */
+        background-position: top; /* 背景画像を中央に配置 */
+        background-repeat: no-repeat
+    }
+    nav ul li.hover2 a {
+        background-image: url(../images/common/navi_2.png);
+        background-size: 75%; /* 背景画像を項目全体にフィット */
+        background-position: top; /* 背景画像を中央に配置 */
+        background-repeat: no-repeat
+    }
+    nav ul li.hover3 a {
+        background-image: url(../images/common/navi_3.png);
+        background-size: 75%; /* 背景画像を項目全体にフィット */
+        background-position: top; /* 背景画像を中央に配置 */
+        background-repeat: no-repeat
+    }
+    nav ul li.hover4 a {
+        background-image: url(../images/common/navi_4.png);
+        background-size: 75%; /* 背景画像を項目全体にフィット */
+        background-position: top; /* 背景画像を中央に配置 */
+        background-repeat: no-repeat
+    }
+    nav ul li.hover5 a {
+        background-image: url(../images/common/navi_5.png);
+        background-size: 75%; /* 背景画像を項目全体にフィット */
+        background-position: top; /* 背景画像を中央に配置 */
+        background-repeat: no-repeat
+    }
+    .over{
+        display: flex;
+        align-items: flex-end; /* 下に配置 */
+        justify-content: center; /*中央に配置 */
+      }
+    .hover1,
+    .hover2,
+    .hover3,
+    .hover4,
+    .hover5 {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        }
+
+    .hover1:hover,
+    .hover2:hover,
+    .hover3:hover,
+    .hover4:hover,
+    .hover5:hover {
+        border-bottom-color: transparent;
+        transform: scale(1.1, 1.1);
+    }
+    .fixed-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-image: url(../images/common/nav_bk_img.jpg);/* 背景画像を追加 */
+        z-index: 117; /* 他の要素の上に表示 */
+        display: flex;
+        justify-content: center;
+        align-items: center; /* メニューを中央配置 */
+        height: 110px; /* メニューの高さを固定 */
+    }
+    .fixed-nav ul {
+        display: flex;
+        align-items: center; /* 垂直中央揃え */
+    }
+    .fixed-nav li a {
+        transition: transform 0.3s ease;
+        transform-origin: center; /* 拡大の基準を中央にする */
+    }
+    .fixed-nav li:hover a {
+        transform: scale(1.02); /* ホバー時に拡大 */
+    }
+    nav ul li.hover-top a {
+        display: block;
+        width: 8vw; /* 他のメニューと統一 */
+        height: 9.4vmax; /* 他のメニューと統一 */
+        font-size: 1.2dvw;
+        color: #736d71;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        background-image: url(../images/common/navi_top.png); /* 🔹「ＴＯＰ」の画像を指定 */
+        background-size: 75%;
+        background-position: top;
+        background-repeat: no-repeat;
+    } 
+    #nav_0 {
+        opacity: 0; /* 🔹 初期状態では非表示 */
+        transition: opacity 0.3s ease;
+    }
+    .fixed-nav #nav_0 {
+        opacity: 1; /* 🔹 固定されたら表示 */
+    } 
+    .fixed-nav #nav_0 .over{
+        display: flex;
+        align-items: flex-end; /* 下に配置 */
+        justify-content: center; /*中央に配置 */
+      } 
+}

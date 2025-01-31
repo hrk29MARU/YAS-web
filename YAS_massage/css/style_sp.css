@@ -1,0 +1,135 @@
+@charset 'UTF-8';
+@media screen and (max-width: 600px){
+
+    /*基本設定*/
+    body{
+        line-height: 1.5;
+        color: #f4f2eb;
+        font-size: 0.85em;
+        }
+    main p{
+        font-size: 1.1em;
+    }
+    img{
+        border: none;  /*画像に付く余白を消す*/
+        display: block;  /*vertical-align: bottom;でも同じ効果 */
+        width: 100vw; /* 画面幅の100%に合わせる */
+        height: auto; /* アスペクト比を維持して高さを自動調整 */
+        object-fit: contain; /* アスペクト比を保ちながら画像全体を表示 */
+        max-width: 100%; /* 画像の元の幅を超えないようにする */
+        }
+    a{
+    text-decoration: none;
+    }
+    /*文字形式指定*/
+    /* .wf1{ */
+        /*font-family: "じゅん 201","Jun 201";*/
+        /* font-family: "新丸ゴ R","Shin Maru Go Regular";
+    } */
+    .hidden-sp{
+    display: none !important;
+    }
+
+    /*ヘッダー*/
+    header {
+        position: relative; /* ナビゲーションが正しく表示されるようにする */
+    }
+    #logo{
+        width: 100%;
+    }
+    .navbar-collapse{
+        position: absolute;
+        top: 78px;
+        right: 0;
+        /* display: none; */
+        float: none;
+        width: 80%;
+        background: #b28656;
+        border-radius: 6px;
+        z-index: 1000;
+        opacity: 0;  /* 初期状態は透明 */
+        transform: translateY(-10px);  /* 少し上にずらす */
+        visibility: hidden;  /* 完全に隠す */
+        transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+    }
+    .navbar-collapse li {
+        margin: 0 40px 0 0;
+        font-size: 14px;
+        list-style-type: none;  /*リストの・を消す*/
+        position: relative; /* アイコンを配置するため */
+        padding-left: 40px; /* 画像のスペースを確保 */
+    }
+    .navbar-collapse li::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 25px; /* 画像サイズ */
+        height: 25px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    /* 各メニューごとに異なる画像を設定 */
+    #nav_1::before { background-image: url(../images/images_sp/navi_sp_1.png); }
+    #nav_2::before { background-image: url(../images/images_sp/navi_sp_2.png); }
+    #nav_3::before { background-image: url(../images/images_sp/navi_sp_3.png); }
+    #nav_4::before { background-image: url(../images/images_sp/navi_sp_4.png); }
+    #nav_5::before { background-image: url(../images/images_sp/navi_sp_5.png); } 
+
+    /* 「ＴＯＰ」メニューのアイコン */
+    #nav_0_pc::before, #nav_0_sp::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px; /* 画像サイズ */
+        height: 24px;
+        background-image: url(../images/images_sp/navi_sp_top.png); /* トップのアイコン */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .navbar-collapse li a{
+        display: block;
+        padding: 15px 0;
+        color: #fff;
+        text-decoration: none;
+        border-top: 1px solid #fff;
+    }
+    .navbar-collapse li:first-child a{
+        border-top: none;
+    }
+    #menu-input{
+        display:none;
+    }
+    #menu-icon{
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        top:10px;
+        right: 10px;
+        background-image: url(../images/images_sp/button_menu.png);
+        background-size: 100%; /* 背景画像を項目全体にフィット */
+        background-repeat: no-repeat;
+        border-radius: 5px;
+        transition: transform 0.5s ease;   
+    }
+    /* ✅ メニューを開いたときにアイコンを変更 */
+    #menu-input:checked + label#menu-icon {
+        background-image: url(../images/images_sp/button_close.png);
+        border: 1px solid #b28656;
+        transform: rotate(90deg);  /* アイコンを回転 */
+    }
+    /* ✅ メニューを開いたときのアニメーション */
+    #menu-input:checked ~ .navbar-collapse{
+        opacity: 1;  /* 表示 */
+        transform: translateY(0);  /* 元の位置へ */
+        visibility: visible;  /* 表示 */
+    }
+    
+    
+
+    
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_sp.css" media="screen and (max-width: 600px)">
+    <link rel="stylesheet" href="css/style_pc.css" media="screen and (min-width: 601px)">
+    <title>横浜青葉台鍼灸マッサージ院―HP</title>
+</head>
+<body id="top-page">
+      <!-- ヘッダー -->
+      <header>
+        <input id="menu-input" type="checkbox" class="hidden-pc">
+        <label id="menu-icon" for="menu-input" class="hidden-pc"></label>
+        <nav class="navbar-collapse">
+            <ul id="nav-menu">
+                <li class="hidden-pc" id="nav_0_sp"><a href="#" class="over">Ｔ Ｏ Ｐ</a></li>
+                <li class="hover1" id="nav_1"><a href="#" class="over">施 術 内 容</a></li>
+                <li class="hover2" id="nav_2"><a href="#" class="over">プロフィール</a></li>
+                <li class="hover3" id="nav_3"><a href="#" class="over">予　約</a></li>
+                <li class="hover4" id="nav_4"><a href="#" class="over">ア ク セ ス</a></li>
+                <li class="hover5" id="nav_5"><a href="#" class="over">よくある質問</a></li>
+            </ul>
+            
+        </nav>
+        <picture>
+            <source media="(max-width: 600px)" srcset="images/images_sp/logo_sp.jpg">
+            <source media="(min-width: 601px)" srcset="images/common/logo_pc.jpg">
+            <img src="images/common/logo_pc.jpg" alt="横浜青葉台鍼灸マッサージ院のロゴ">
+        </picture>  
+    </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script>
+            $(document).ready(function () {
+                var menu = $('.navbar-collapse'); // ナビゲーション
+                var offset = menu.offset(); // ナビゲーションの初期位置を取得
+                var navMenu = $('#nav-menu'); // メニューリスト
+
+                $(window).on('scroll', function () {
+                    if ($(window).scrollTop() > offset.top) {
+                        // スマホ版用の「ＴＯＰ」を追加（hidden-pc を付ける）
+                        if (!$('#nav_0_sp').length) {
+                            navMenu.prepend('<li class="hover-top hidden-pc" id="nav_0_sp"><a href="#" class="over">Ｔ Ｏ Ｐ</a></li>');
+                        }    
+
+                        // PC版用の「ＴＯＰ」を追加（hidden-pc を付けない）
+                        if (!$('#nav_0').length) {
+                            navMenu.prepend('<li class="hover-top hidden-sp" id="nav_0"><a href="images/common/navi_top.png" class="over">Ｔ Ｏ Ｐ</a></li>');
+                            }
+                        menu.addClass('fixed-nav'); // 固定クラスを追加
+                    } else {
+                        $('#nav_0').remove(); // スクロールで元に戻ったら削除
+                        menu.removeClass('fixed-nav');
+                    }
+                });
+            });
+        </script>
+        <script>
+            // ページが読み込まれたときにフェードイン
+            window.onload = function () {
+                document.body.style.opacity = 1; // ページが完全に表示されるように
+            };
+        </script>
+
+    </body>
+</html>
